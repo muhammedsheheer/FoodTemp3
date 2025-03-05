@@ -29,7 +29,6 @@ const Navbar = ({
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <nav
       className={cn(
@@ -38,9 +37,27 @@ const Navbar = ({
       )}
     >
       {/*big screen */}
-      <div className="hidden px-4 pt-40 md:block md:px-20">
-        <div className="flex flex-col">
-          <div className="flex flex-col items-start gap-8">
+      <div
+        className={
+          pathname === "/"
+            ? "hidden px-4 pt-40 md:block md:px-20"
+            : "px-4 pt-0 md:px-[50px] 2xl:px-[140px]"
+        }
+      >
+        <div
+          className={
+            pathname === "/"
+              ? "flex flex-col"
+              : "flex flex-row items-center justify-center"
+          }
+        >
+          <div
+            className={
+              pathname === "/"
+                ? "flex flex-col items-start gap-8"
+                : "mt-2 flex flex-row items-center justify-center gap-14"
+            }
+          >
             <Link
               href={"/"}
               className="flex flex-row gap-1 font-open_sans text-xs font-[400] uppercase leading-[25px] tracking-[1.6px] text-[#FFF500]"
@@ -107,7 +124,7 @@ const Navbar = ({
               Reservation
             </Link>
             <Link
-              href={"/"}
+              href={"/contact"}
               className="flex flex-row gap-1 font-open_sans text-xs font-[400] uppercase leading-[25px] tracking-[1.6px] text-[#FFF500]"
             >
               <Image

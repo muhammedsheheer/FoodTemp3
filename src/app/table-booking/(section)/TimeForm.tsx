@@ -175,7 +175,7 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
                         <SelectItem
                           key={num}
                           value={num.toString()}
-                          className="text-white"
+                          className="text-black"
                         >
                           {num} {num === 1 ? "Guest" : "Guests"}
                         </SelectItem>
@@ -253,7 +253,11 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
                       </FormControl>
                       <SelectContent className="max-h-[300px]">
                         {generateTimeSlots().map((time) => (
-                          <SelectItem key={time} value={time}>
+                          <SelectItem
+                            className="text-black"
+                            key={time}
+                            value={time}
+                          >
                             {time}
                           </SelectItem>
                         ))}
@@ -276,7 +280,7 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
                     key={time}
                     onClick={() => form.setValue("time", time)}
                     className={cn(
-                      "flex h-full w-full cursor-pointer items-center justify-center border-[1px] border-gray-800 py-4 text-white",
+                      "flex h-full w-full cursor-pointer items-center justify-center border-[1px] border-[#FFF500] py-4 text-white",
                       form.watch("time") === time && "border-primary",
                     )}
                   >
@@ -287,7 +291,7 @@ const TimeForm: FC<TimeFormProps> = ({ mainform, setpage }) => {
             </div>
           )}
           <Button
-            className="w-fit bg-[#000] px-6 py-6 hover:bg-[#FEC679]"
+            className="w-fit bg-[#FFF500] px-6 py-6 text-[#000] hover:bg-[#d8d45d]"
             disabled={disable}
           >
             Book A Table
