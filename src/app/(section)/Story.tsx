@@ -51,7 +51,7 @@ const Story: React.FC = () => {
             width={160}
             height={160}
             alt="logo"
-            className="h-[280px] w-[200px] object-cover"
+            className="hidden h-[280px] w-[200px] object-cover md:block"
           />
           <p className="w-full max-w-[350px] text-center font-lora text-sm font-[400] lowercase text-[#9C9E9F] md:text-start md:text-base">
             Welcome to Nova, where gastronomy meets entertainment for an
